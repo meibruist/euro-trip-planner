@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize data
     const weatherData = [
-        { date: "April 20-22", location: "London", temp: "12-16°C (53-61°F)", notes: "Changeable spring weather, possible showers" },
+        { date: "April 20-22", location: "London", temp: "12-16°C (53-61°F)", notes: "Changeable spring weather, possible rain on Monday (20%)" },
         { date: "April 22-25", location: "Edinburgh", temp: "9-14°C (48-57°F)", notes: "Cool, potential for rain" },
         { date: "April 22-25", location: "Scottish Highlands", temp: "5-10°C (41-50°F)", notes: "Cooler, rain likely, potentially windy" },
         { date: "April 25-28", location: "Bristol", temp: "11-16°C (52-61°F)", notes: "Similar to London, possible showers" },
@@ -18,15 +18,15 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: "Moisture-wicking cycling tops (2-3)", checked: false, sendBack: false },
             { name: "Lightweight packable cycling jacket", checked: false, sendBack: false },
             { name: "Cycling gloves", checked: false, sendBack: false },
-            { name: "Sunglasses with UV protection", checked: false, sendBack: false },
-            { name: "Cycling socks (2 pairs)", checked: false, sendBack: false }
+            { name: "Sunglasses", checked: false, sendBack: false },
+            { name: "Small bike bag", checked: false, sendBack: false }
         ],
         "Multipurpose Items": [
             { name: "Athletic shoes (for cycling/walking)", checked: false, sendBack: false },
             { name: "Microfiber travel towel", checked: false, sendBack: false },
             { name: "Collapsible water bottle", checked: false, sendBack: false },
             { name: "Sunscreen", checked: false, sendBack: false },
-            { name: "Lip balm with SPF", checked: false, sendBack: false },
+            { name: "Slides", checked: false, sendBack: false },
             { name: "Travel-sized chamois cream", checked: false, sendBack: false }
         ],
         "Regular Clothing": [
@@ -34,16 +34,21 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: "Light sweater or fleece", checked: false, sendBack: true },
             { name: "Packable rain jacket", checked: false, sendBack: false },
             { name: "Wedding attire", checked: false, sendBack: true },
-            { name: "Underwear and socks", checked: false, sendBack: false }
+            { name: "Socks", checked: false, sendBack: false },
+            { name: "Bathing suit", checked: false, sendBack: false },
+            { name: "Leggings", checked: false, sendBack: false },
+            { name: "Sleep clothes", checked: false, sendBack: false }
         ],
         "Essentials": [
-            { name: "Phone charger & adapter", checked: false, sendBack: false },
+            { name: "Phone charger", checked: false, sendBack: false },
+            { name: "UK adapter plug", checked: false, sendBack: true },
+            { name: "Euro adapter plug", checked: false, sendBack: true },
+            { name: "Charge brick", checked: false, sendBack: true },
             { name: "Mini first aid kit", checked: false, sendBack: false },
-            { name: "Travel-sized toiletries", checked: false, sendBack: false },
-            { name: "Credit cards/minimal cash", checked: false, sendBack: false },
-            { name: "Travel documents", checked: false, sendBack: false },
-            { name: "Small lock", checked: false, sendBack: false },
-            { name: "UK adapter plug", checked: false, sendBack: true }
+            { name: "Toiletries", checked: false, sendBack: false },
+            { name: "Wallet", checked: false, sendBack: false },
+            { name: "Passport", checked: false, sendBack: false },
+            { name: "Skin care", checked: false, sendBack: false }
         ]
     };
 
