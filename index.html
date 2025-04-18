@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>European Trip Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="planner-container">
+        <header class="planner-header">
+            <h1>European Trip Planner</h1>
+            <div class="tabs">
+                <button class="tab-button active" data-tab="weather">Weather Guide</button>
+                <button class="tab-button" data-tab="packing">Packing List</button>
+                <button class="tab-button" data-tab="sendback">Send Back</button>
+            </div>
+        </header>
+
+        <div class="tab-content">
+            <!-- Weather Tab Content -->
+            <div class="tab-pane active" id="weather">
+                <p class="weather-info">Estimated seasonal weather patterns:</p>
+                <div class="weather-cards">
+                    <!-- Weather cards will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Packing List Tab Content -->
+            <div class="tab-pane" id="packing">
+                <div class="progress-container">
+                    <div class="progress-text">Progress: <span id="progress-percent">0</span>%</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="sections-container">
+                    <!-- Sections will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Send Back Tab Content -->
+            <div class="tab-pane" id="sendback">
+                <div class="sendback-stats">
+                    <h2>Items to Send Back with Boyfriend</h2>
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <div class="stat-number" id="send-back-count">0</div>
+                            <div class="stat-label">To Send Back</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number" id="keep-count">0</div>
+                            <div class="stat-label">To Keep</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sections-container" id="sendback-sections">
+                    <!-- Sections will be dynamically inserted here -->
+                </div>
+                <div class="suggestions">
+                    <h3>Suggestions</h3>
+                    <ul>
+                        <li>Send back all wedding attire</li>
+                        <li>Keep all cycling gear for Dordogne</li>
+                        <li>Send back extra casual clothes (keep 1-2 outfits)</li>
+                        <li>Consider sending back warmer Scotland clothes</li>
+                        <li>Keep lightweight rain jacket</li>
+                        <li>Send back UK adapter plugs (keep EU ones)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Templates for dynamic content -->
+    <template id="weather-card-template">
+        <div class="weather-card">
+            <div class="location-name">London</div>
+            <div class="date-range">April 20-22</div>
+            <div class="temperature">12-16°C (53-61°F)</div>
+            <div class="weather-notes">Changeable spring weather, possible showers</div>
+        </div>
+    </template>
+
+    <template id="section-template">
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Section Title</h2>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="section-content">
+                <ul class="item-list">
+                    <!-- Items will be dynamically inserted here -->
+                </ul>
+                <div class="add-item-container">
+                    <button class="add-button">
+                        <i class="fa-solid fa-plus"></i> Add Item
+                    </button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="item-template">
+        <li class="item">
+            <div class="item-check">
+                <i class="fa-regular fa-circle"></i>
+            </div>
+            <span class="item-text">Item name</span>
+            <div class="item-actions">
+                <button class="edit-button"><i class="fa-solid fa-pen"></i></button>
+                <button class="delete-button"><i class="fa-solid fa-trash"></i></button>
+            </div>
+        </li>
+    </template>
+
+    <template id="sendback-item-template">
+        <li class="item">
+            <span class="item-text">Item name</span>
+            <button class="sendback-toggle">
+                <i class="fa-solid fa-right-left"></i>
+                <span class="toggle-text">Keep</span>
+            </button>
+        </li>
+    </template>
+
+    <template id="add-item-form-template">
+        <div class="add-item-form">
+            <input type="text" class="new-item-input" placeholder="New item name">
+            <div class="form-buttons">
+                <button class="save-button"><i class="fa-solid fa-check"></i></button>
+                <button class="cancel-button"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+    </template>
+
+    <template id="edit-item-form-template">
+        <div class="edit-item-form">
+            <input type="text" class="edit-item-input" placeholder="Item name">
+            <div class="form-buttons">
+                <button class="save-edit-button"><i class="fa-solid fa-check"></i></button>
+                <button class="cancel-edit-button"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
