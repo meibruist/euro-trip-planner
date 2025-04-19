@@ -222,22 +222,34 @@ body {
     gap: 8px;
 }
 
-.edit-button, .delete-button {
+.edit-button {
     background: none;
     border: none;
     font-size: 14px;
     cursor: pointer;
     padding: 4px;
     border-radius: 4px;
-    color: #6b7280;
+    color: #10b981; /* Green color */
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    color: #ef4444; /* Red color */
 }
 
 .edit-button:hover {
-    color: #2563eb;
+    color: #059669;
+    background-color: #d1fae5;
 }
 
 .delete-button:hover {
     color: #dc2626;
+    background-color: #fee2e2;
 }
 
 /* Add Item Styles */
