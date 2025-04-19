@@ -267,8 +267,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 // Toggle send back status
-                toggleButton.addEventListener('click', () => {
-                    // old --> packingData[sectionName][index].sendBack = !packingData[sectionName][index].sendBack;
+                toggleButton.addEventListener('click', (e) => {
+                    old --> packingData[sectionName][index].sendBack = !packingData[sectionName][index].sendBack;
                     if (e.target === sectionHeader || e.target === sectionClone.querySelector('.section-title') || e.target === sectionClone.querySelector('.fa-chevron-down')) {
                         section.classList.toggle('expanded');
                     }
