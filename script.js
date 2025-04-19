@@ -200,7 +200,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Save new item
                 const saveButton = addItemContainer.querySelector('.save-button');
-                saveButton.addEventListener('click', () => {
+                saveButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     if (input.value.trim()) {
                         packingData[sectionName].push({
                             name: input.value.trim(),
@@ -214,19 +215,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Cancel adding
                 const cancelButton = addItemContainer.querySelector('.cancel-button');
-                cancelButton.addEventListener('click', () => {
+                cancelButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     renderPackingSections();
                 });
             });
             
             // Toggle section expansion
             const sectionHeader = sectionClone.querySelector('.section-header');
-            sectionHeader.addEventListener('click', () => {
-                section.classList.toggle('expanded');
-            });
-            
-            sectionsContainer.appendChild(sectionClone);
-        });
+            sectionHeader.addEventListener('click', (e) => {
+                // Only toggle if the click was directly on the header, not bubbled from children
+                if (e.target === sectionHeader || e.target === sectionClone.querySelector('.section-title') || e.target === sectionClone.querySelector('.fa-chevron-down')) {
+                    section.classList.toggle('expanded');
+                }
+            });            
+
     }
 
     // Render send back sections
@@ -265,7 +268,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Toggle send back status
                 toggleButton.addEventListener('click', () => {
-                    packingData[sectionName][index].sendBack = !packingData[sectionName][index].sendBack;
+                    // old --> packingData[sectionName][index].sendBack = !packingData[sectionName][index].sendBack;
+                    if (e.target === sectionHeader || e.target === sectionClone.querySelector('.section-title') || e.target === sectionClone.querySelector('.fa-chevron-down')) {
+                        section.classList.toggle('expanded');
+                    }
                     saveData();
                     renderSendBackSections();
                 });
@@ -275,8 +281,11 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Toggle section expansion
             const sectionHeader = sectionClone.querySelector('.section-header');
-            sectionHeader.addEventListener('click', () => {
-                section.classList.toggle('expanded');
+            sectionHeader.addEventListener('click', (e) => {
+                // Only toggle if the click was directly on the header, not bubbled from children
+                if (e.target === sectionHeader || e.target === sectionClone.querySelector('.section-title') || e.target === sectionClone.querySelector('.fa-chevron-down')) {
+                    section.classList.toggle('expanded');
+                }
             });
             
             sectionsContainer.appendChild(sectionClone);
