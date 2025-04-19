@@ -132,7 +132,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const itemElement = itemClone.querySelector('.item');
                 const itemCheck = itemClone.querySelector('.item-check');
                 
-                itemCheck.addEventListener('click', () => {
+                itemCheck.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Add this line to prevent the click from bubbling up
                     packingData[sectionName][index].checked = !packingData[sectionName][index].checked;
                     renderPackingSections();
                     saveData();
@@ -184,11 +185,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Add new item functionality
             const addButton = sectionClone.querySelector('.add-button');
-            addButton.addEventListener('click', () => {
+            addButton.addEventListener('click', (e) => {
+                e.stopPropagation(); // Add this line
+                
                 const addItemTemplate = document.getElementById('add-item-form-template');
                 const formClone = addItemTemplate.content.cloneNode(true);
                 
-                const addItemContainer = sectionClone.querySelector('.add-item-container');
+                const addItemContainer = section.querySelector('.add-item-container');
                 addItemContainer.innerHTML = '';
                 addItemContainer.appendChild(formClone);
                 
